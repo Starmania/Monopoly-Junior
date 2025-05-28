@@ -1,3 +1,7 @@
+ALL_BUILD*
+ZERO_CHECK*
+
+
 # Prerequisites
 *.d
 
@@ -64,7 +68,9 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
-out/
+[Oo]ut/
+*.dir/
+CMakeFiles/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

@@ -1,28 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
-    </Filter>
+    <ClCompile Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\src\Cases.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\src\linked_list\LinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Carte.h">
+    <ClInclude Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\src\Cases.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Carte_Aller.h">
+    <ClInclude Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\src\Couleurs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Carte_stand.h">
+    <ClInclude Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\src\Carte.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\src\rtti.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\src\linked_list\LinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\src\linked_list\Link.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E7F361DF-6AF8-3347-9B28-424E535BF6C8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2FB1F233-78B7-3867-AD64-6154728620A1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
