@@ -30,6 +30,9 @@
     <ClInclude Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\src\linked_list\Link.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Decks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Barynonyx7\Documents\GitHub\Monopoly-Junior\CMakeLists.txt" />
