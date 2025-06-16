@@ -19,6 +19,7 @@ public:
     int size();
     void add(T value);
     void insert(T value, int position);
+    T pop(int position);
     void remove(int position);
     T operator[](int position);
 };

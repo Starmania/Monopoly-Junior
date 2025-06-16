@@ -48,7 +48,7 @@ int LinkedList<T>::size() {
 
 template<typename T>
 void LinkedList<T>::add(T value) {
-    Link<T>* link = new Link(value, this->lastLink, nullptr);
+    Link<T>* link = new Link<T>(value, this->lastLink, nullptr);
 
     size_dirty = true;
 
@@ -79,7 +79,7 @@ void LinkedList<T>::insert(T value, const int position) {
 
     if (position == 0) {
         Link<T> *link = getLink(position);
-        Link<T>* newLink = new Link(value, nullptr, link);
+        Link<T>* newLink = new Link<T>(value, nullptr, link);
 
         size_dirty = true;
 
@@ -93,7 +93,7 @@ void LinkedList<T>::insert(T value, const int position) {
     Link<T> *link = getLink(position);
     Link<T>* previousLink = link->getPreviousLink();
 
-    Link<T>* newLink = new Link(value, previousLink, link);
+    Link<T>* newLink = new Link<T>(value, previousLink, link);
 
     size_dirty = true;
 
@@ -102,7 +102,7 @@ void LinkedList<T>::insert(T value, const int position) {
 }
 
 template<typename T>
-void LinkedList<T>::remove(const int position) {
+T LinkedList<T>::pop(const int position) {
     Link<T>* link = getLink(position);
 
     Link<T>* previousLink = link->getPreviousLink();
@@ -127,10 +127,21 @@ void LinkedList<T>::remove(const int position) {
     // Remove any refs so it could be GC'ed
     link->setNextLink(nullptr);
     link->setPreviousLink(nullptr);
+
+    const T value = link->getData();
+
     delete link;
+
+    return value;
 }
 
 template<typename T>
 T LinkedList<T>::operator[](const int position) {
     return getLink(position)->getData();
 }
+
+class Case;
+class Carte;
+
+template class LinkedList<Case*>;
+template class LinkedList<Carte*>;

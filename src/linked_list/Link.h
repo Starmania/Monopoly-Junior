@@ -17,7 +17,7 @@ public:
     T getData() const {return this->data;};
     Link *getPreviousLink() {return this->previousLink;};
     Link *getNextLink() {return this->nextLink;};
-    void setData(int value) {this->data = value;};
+    void setData(T value) {this->data = value;};
     void setPreviousLink(Link *link) {this->previousLink = link;};
     void setNextLink(Link *link) {this->nextLink = link;};
 };

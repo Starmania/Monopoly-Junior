@@ -10,8 +10,6 @@ Case *Case::linkTo(Case *suivante) {
 }
 
 
-
-
 Attraction* Attraction::as_attraction(Case *case_) {
     return dynamic_cast<Attraction*>(case_);
 }
