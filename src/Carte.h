@@ -13,11 +13,11 @@ public:
 
 class CarteAller : public Carte {
 private:
-	std::string destination;
+	const int destination;
 public:
 	// std::move > const&
-	CarteAller(std::string Destination) : destination(std::move(Destination)) {}
-	std::string to_string() const override { return "CarteAller(" + destination + ")"; }
+	CarteAller(const int destination) : destination(destination) {}
+	std::string to_string() const override { return "CarteAller(" + std::to_string(destination) + ")"; }
 };
 
 class CarteStand : public Carte {

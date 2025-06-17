@@ -27,7 +27,7 @@ std::vector<Case*> cases = {
 	new Attraction(19, 3, Couleur::ROUGE, "La Maison Hantée"),
 	new Chance(20),
 	new Train(21, Couleur::BLEU),
-	new Attraction(22, 4, Couleur::JAUNE, "Promenade en Hélicoptère"),
+	new Attraction(22, 4, Couleur::JAUNE, "Promenade en hélicoptère"),
 	new Attraction(23, 4, Couleur::JAUNE, "Promenade à poney"),
 	new Impots(24, 2, "voir le ballet des dauphins"),
 	new Chance(25),
@@ -35,11 +35,34 @@ std::vector<Case*> cases = {
 	new Attraction(27, 4, Couleur::VERT, "Autos tamponneuses"),
 	new Attraction(28, 4, Couleur::VERT, "Grande roue"),
 	new Train(29, Couleur::ROUGE),
-	new Attraction(30, 5, Couleur::BLEU, "Grand Huit"),
-	new Attraction(31, 5, Couleur::BLEU, "Montagnes Russes")
+	new Attraction(30, 5, Couleur::BLEU, "Grand huit"),
+	new Attraction(31, 5, Couleur::BLEU, "Montagnes russes")
 };
 
 std::vector<Carte*> cartes = {
-
-
+	new CarteStand(Couleur::ORANGE),
+	new CarteStand(Couleur::ORANGE),
+	new CarteStand(Couleur::ROUGE),
+	new CarteStand(Couleur::ROUGE),
+	new CarteStand(Couleur::ROSE),
+	new CarteStand(Couleur::ROSE),
+	new CarteStand(Couleur::BLANC),
+	new CarteStand(Couleur::BLANC),
+	new CarteStand(Couleur::BLEU),
+	new CarteStand(Couleur::BLEU),
+	new CarteStand(Couleur::JAUNE),
+	new CarteStand(Couleur::JAUNE),
+	new CarteStand(Couleur::VERT),
+	new CarteStand(Couleur::VERT),
+	new CarteStand(Couleur::VIOLET),
+	new CarteAller(14),
+	new CarteAller(30),
+	new CarteAller(0),
+	new CarteAller(26),
+	new CarteAller(24),
+	new CarteAller(8),
+	new CarteAller(21),
+	new CarteAller(29),
+	new CarteAller(5),
+	new CarteAller(13),
 };
