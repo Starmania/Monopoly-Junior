@@ -15,7 +15,6 @@ class CarteAller : public Carte {
 private:
 	const int destination;
 public:
-	// std::move > const&
 	CarteAller(const int destination) : destination(destination) {}
 	std::string to_string() const override { return "CarteAller(" + std::to_string(destination) + ")"; }
 };

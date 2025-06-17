@@ -1,18 +1,18 @@
 #include <iostream>
 
 #include "src/Carte.h"
+#include "src/Jeu.h"
+#include "src/Plato.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
 
-    Carte* carte = new CarteAller(14);
-    Carte* carte2 = new CarteStand(Couleur::ORANGE);
+    Jeu jeu;
 
-    std::cout << carte->to_string() << std::endl;
-    std::cout << carte2->to_string() << std::endl;
+    jeu.ajouter_joueur("Romain", Couleur::BLANC);
+    jeu.ajouter_joueur("Simon", Couleur::JAUNE);
 
-    delete carte;
-    delete carte2;
+    jeu.jouer();
 
     return 0;
 }

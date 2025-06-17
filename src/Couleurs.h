@@ -17,7 +17,7 @@ namespace Couleur { // Pour rendre le Couleur::to_string explicite
         BLEU
     };
 
-    inline const char *to_string(Couleur e) {
+    inline const char *to_string(const Couleur e) {
         switch (e) {
             case VIOLET: return "VIOLET";
             case BLANC: return "BLANC";

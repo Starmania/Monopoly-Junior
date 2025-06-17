@@ -3,6 +3,7 @@
 //
 
 #include "LinkedList.h"
+#include "../Joueur.h"
 
 #include <stdexcept>
 
@@ -142,6 +143,8 @@ T LinkedList<T>::operator[](const int position) {
 
 class Case;
 class Carte;
+class Joueur;
 
 template class LinkedList<Case*>;
 template class LinkedList<Carte*>;
+template class LinkedList<Joueur*>;

@@ -13,4 +13,9 @@ add_executable(monopoly-junior
         src/linked_list/LinkedList.cpp
         src/linked_list/LinkedList.h
         src/linked_list/Link.h
+        src/Decks.h
+        src/Plato.cpp
+        src/Joueur.h
+        src/Jeu.cpp
+        src/Jeu.h
 )
