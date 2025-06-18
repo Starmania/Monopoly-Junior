@@ -12,6 +12,7 @@ class Jeu {
 private:
     Plato plato;
     int lancer_de();
+    bool est_carte_utilisable(Carte* carte);
 public:
     void ajouter_joueur(std::string nom_joueur, Couleur::Couleur couleur);
     void jouer();

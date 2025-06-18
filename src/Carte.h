@@ -24,5 +24,6 @@ private:
 	Couleur::Couleur couleur;
 public:
 	CarteStand(const Couleur::Couleur couleur) : couleur(couleur) {}
+	Couleur::Couleur get_couleur() const { return couleur; }
 	std::string to_string() const override { return std::string("CarteStand(") + Couleur::to_string(couleur) + ")";}
 };

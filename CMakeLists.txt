@@ -18,4 +18,5 @@ add_executable(monopoly-junior
         src/Joueur.h
         src/Jeu.cpp
         src/Jeu.h
+        src/Joueur.cpp
 )

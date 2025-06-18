@@ -43,18 +43,19 @@ void Plato::lancer_jeu() {
         << " lances un " << lancees.back() << std::endl;
     }
 
-    std::vector<int> idx(joueurs.size());
-    std::iota(idx.begin(), idx.end(), 0);
+    std::vector<int> nouvel_index(joueurs.size());
+    std::iota(nouvel_index.begin(), nouvel_index.end(), 0);
+    // Cree une liste du style {0, 1, 2... , joueur.size() - 1}
 
-    std::ranges::sort(idx, [&](const int a, const int b) {
-        return lancees[a] < lancees[b];
+    std::ranges::sort(nouvel_index, [&](const int a, const int b) {
+        return lancees[a] > lancees[b];
     });
 
-    std::vector<Joueur*> ordered(joueurs.size());
-    for (size_t i = 0; i < idx.size(); ++i)
-        ordered[i] = joueurs[idx[i]];
+    std::vector<Joueur*> trie(joueurs.size());
+    for (size_t i = 0; i < nouvel_index.size(); ++i)
+        trie[i] = joueurs[nouvel_index[i]];
 
-    this->joueurs = std::move(ordered);
+    this->joueurs = std::move(trie);
 
     this->joueur_it = joueurs.begin();
 
@@ -84,6 +85,30 @@ Carte* Plato::piocher_carte() {
     return carte;
 }
 
+bool Plato::joueur_fait_bankeroute() const {
+    for (const Joueur* joueur: joueurs) {
+        if (joueur->getMoula() <= 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+Attraction *Plato::get_stand_couleur(const Couleur::Couleur couleur) {
+    for (int i = 0; i < cases.size(); ++i) {
+        Case* case_ = cases[i];
+        Attraction* attraction = dynamic_cast<Attraction*>(case_);
+        if (!attraction) continue;
+        if (couleur == attraction->getCouleur()) return attraction;
+    }
+    throw std::runtime_error("???????");
+}
+
+size_t Plato::get_plato_size() {
+    if (!jeu_en_cours) throw std::logic_error("Pas de taille disponible, le jeu n'est pas en cours !");
+    return cases.size();
+}
+
 Joueur* Plato::joueur_suivant() {
     if (!jeu_en_cours) throw std::logic_error("Pas de joueur suivant, le jeu n'est pas en cours !");
 
@@ -95,4 +120,24 @@ Joueur* Plato::joueur_suivant() {
     }
 
     return joueur;
+}
+
+void Plato::relancer_de() {
+    if (!jeu_en_cours) throw std::logic_error("Pas de joueur suivant, le jeu n'est pas en cours !");
+
+    // Recule l'iterator
+    if (this->joueur_it == joueurs.begin()) {
+        this->joueur_it = std::prev(joueurs.end());
+    } else {
+        --joueur_it;
+    }
+}
+
+Joueur * Plato::get_joueur(const Couleur::Couleur couleur) const {
+    for (Joueur* joueur: joueurs) {
+        if (joueur->getCouleur() == couleur) {
+            return joueur;
+        }
+    }
+    throw std::invalid_argument(std::string("Le joueur de couleur ") + Couleur::to_string(couleur) + " n'existe pas !");
 }

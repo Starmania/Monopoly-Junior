@@ -14,7 +14,8 @@ namespace Couleur { // Pour rendre le Couleur::to_string explicite
         ROUGE,
         JAUNE,
         VERT,
-        BLEU
+        BLEU,
+        UNDEFINED
     };
 
     inline const char *to_string(const Couleur e) {
@@ -27,6 +28,7 @@ namespace Couleur { // Pour rendre le Couleur::to_string explicite
             case JAUNE: return "JAUNE";
             case VERT: return "VERT";
             case BLEU: return "BLEU";
+            case UNDEFINED: return "UNDEFINED";
             default: return "unknown";
         }
     }
