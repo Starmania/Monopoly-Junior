@@ -16,6 +16,7 @@ private:
 	const int destination;
 public:
 	CarteAller(const int destination) : destination(destination) {}
+	int getDestination() const { return destination; }
 	std::string to_string() const override { return "CarteAller(" + std::to_string(destination) + ")"; }
 };
 

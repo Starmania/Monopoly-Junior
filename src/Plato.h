@@ -11,8 +11,7 @@
 #include "Joueur.h"
 
 
-class Plato
-{
+class Plato {
 public :
 	Plato();
 
@@ -24,15 +23,20 @@ public :
 	void ajouter_joueur(std::string nom_joueur, Couleur::Couleur couleur);
 	Joueur* joueur_suivant();
 	Joueur* get_joueur(Couleur::Couleur couleur) const;
+
+	std::vector<Joueur *> get_leaderboard() const;
+
 	Carte* piocher_carte();
 
-	bool joueur_fait_bankeroute() const;
+	std::string get_proprio_formate(Couleur::Couleur couleur) const;
 
 	Case* get_case(const int index) {return this->cases[index];}
 
-	Attraction *get_stand_couleur(const Couleur::Couleur couleur);
+	Attraction *get_stand_couleur(Couleur::Couleur couleur);
 
 	size_t get_plato_size();
+
+	Fortune* get_case_fortune();
 
 private :
 	std::mt19937 random_generator = std::mt19937(std::random_device{}());
@@ -42,6 +46,7 @@ private :
 	std::vector<Joueur*> joueurs;
 	bool jeu_en_cours = false;
 	std::vector<Joueur*>::iterator joueur_it; //
+	Fortune* case_fortune = nullptr;
 };
 
 #endif

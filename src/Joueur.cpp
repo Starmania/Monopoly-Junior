@@ -4,7 +4,11 @@
 #include "Joueur.h"
 
 bool Joueur::moveBy(const int position, const int taille_plato) {
-    const int oldPosition = this->getPosition();
-    this->setPosition((this->getPosition() + position) % taille_plato);
-    return oldPosition > this->getPosition();
+    return moveTo((this->getPosition() + position) % taille_plato);
+}
+
+bool Joueur::moveTo(const int position) {
+    const bool tourComplet = this->position >= position;
+    this->setPosition(position);
+    return tourComplet;
 }

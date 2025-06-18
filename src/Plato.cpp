@@ -85,13 +85,13 @@ Carte* Plato::piocher_carte() {
     return carte;
 }
 
-bool Plato::joueur_fait_bankeroute() const {
-    for (const Joueur* joueur: joueurs) {
-        if (joueur->getMoula() <= 0) {
-            return true;
-        }
+std::string Plato::get_proprio_formate(Couleur::Couleur couleur) const {
+    if (couleur == Couleur::UNDEFINED) {
+        return "la banque";
     }
-    return false;
+    const Joueur* joueur = get_joueur(couleur);
+
+    return std::string(joueur->getNom()) + " (" + Couleur::to_string(joueur->getCouleur()) + ")";
 }
 
 Attraction *Plato::get_stand_couleur(const Couleur::Couleur couleur) {
@@ -107,6 +107,19 @@ Attraction *Plato::get_stand_couleur(const Couleur::Couleur couleur) {
 size_t Plato::get_plato_size() {
     if (!jeu_en_cours) throw std::logic_error("Pas de taille disponible, le jeu n'est pas en cours !");
     return cases.size();
+}
+
+Fortune * Plato::get_case_fortune() {
+    if (!jeu_en_cours) throw std::logic_error("Impossible d'accéder aux cases, le jeu n'est pas en cours !");
+    if (case_fortune != nullptr) return case_fortune;
+    for (int i = 0; i < cases.size(); ++i) {
+        Case* case_ = cases[i];
+        if (case_->getCaseType() == FORTUNE) {
+            case_fortune = dynamic_cast<Fortune*>(case_);
+            return case_fortune;
+        }
+    }
+    throw std::runtime_error("????????");
 }
 
 Joueur* Plato::joueur_suivant() {
@@ -140,4 +153,12 @@ Joueur * Plato::get_joueur(const Couleur::Couleur couleur) const {
         }
     }
     throw std::invalid_argument(std::string("Le joueur de couleur ") + Couleur::to_string(couleur) + " n'existe pas !");
+}
+
+std::vector<Joueur*> Plato::get_leaderboard() const {
+    std::vector<Joueur*> sortedJoueurs = joueurs;
+    std::ranges::sort(sortedJoueurs, [](const Joueur* joueur1, const Joueur* joueur2) {
+        return joueur1->getCouleur() > joueur2->getCouleur();
+    });
+    return sortedJoueurs;
 }

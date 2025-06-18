@@ -3,7 +3,6 @@
 //
 
 #include "LinkedList.h"
-#include "../Joueur.h"
 
 #include <stdexcept>
 
@@ -134,6 +133,11 @@ T LinkedList<T>::pop(const int position) {
     delete link;
 
     return value;
+}
+
+template<typename T>
+void LinkedList<T>::remove(const int position) {
+    pop(position);
 }
 
 template<typename T>

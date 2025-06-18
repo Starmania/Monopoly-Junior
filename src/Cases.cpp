@@ -9,13 +9,8 @@ Case *Case::linkTo(Case *suivante) {
     return suivante;
 }
 
-
-Attraction* Attraction::as_attraction(Case *case_) {
-    return dynamic_cast<Attraction*>(case_);
-}
-
 bool Attraction::est_meme_proprio(Case *case_) const {
-    const Attraction* attraction = as_attraction(case_);
+    const Attraction *attraction = dynamic_cast<Attraction *>(case_);
     if (!attraction) return false;
     return attraction->proprietaire == this->proprietaire && attraction->couleur == this->couleur;
 }
