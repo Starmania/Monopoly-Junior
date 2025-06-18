@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <utility>
+#include <numeric>
 
 Plato::Plato()
 {
